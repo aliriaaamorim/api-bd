@@ -1,4 +1,6 @@
 import streamlit as st;
+import controllers.ClienteController as ccon
+import models.cliente as cliente
 
 st.title(":red[Cadastro de Doador]   ""   :syringe:")
 
@@ -13,3 +15,13 @@ with st.form(key="cadastrar_doador", clear_on_submit=True):
     input_tipo_sanguineo = st.selectbox(label="Tipo Sanguineo", options=["A+", "A-", "B+", "B-", "AB+", 
                                                                          "AB-", "O+", "O-"])
     input_button = st.form_submit_button("Enviar")
+
+    if input_button:
+        cliente.nome = input_nome
+        cliente.cpf = input_cpf
+        cliente.idade = input_idade
+        cliente.data_nascimento = input_data_nascimento
+        cliente.sexo = input_sexo
+        cliente.peso = input_peso
+        cliente.tipo_sanguineo = input_tipo_sanguineo
+        ccon.Incluir(cliente)
