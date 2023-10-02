@@ -1,4 +1,4 @@
-class Cliente:
+class Recebedor:
     def __init__(self, nome, cpf, idade, data_nascimento, sexo, peso, tipo_sanguineo):
         self.nome = nome
         self.cpf = cpf
