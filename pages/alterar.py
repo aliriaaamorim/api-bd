@@ -16,7 +16,7 @@ with st.container():
 
     with st.form(key="cadastrar_doador", clear_on_submit=True):
             if doadorRecuperado is None:
-                input_nome= st.text_input("")
+                st.warning("Digite um CPF válido")
 
             else:
                 input_nome= st.text_input(label="Nome do doador", value = doadorRecuperado.nome)
@@ -71,8 +71,7 @@ with st.container():
 
     with st.form(key="cadastrar_recebedor", clear_on_submit=True):
             if recebedorRecuperado is None:
-                input_nome= st.text_input("")
-
+                st.warning("Digite um CPF válido")
             else:
                 input_nome= st.text_input(label="Nome do doador", value = recebedorRecuperado.nome)
                 input_cpf = st.text_input(label = "CPF", value = recebedorRecuperado.cpf)
